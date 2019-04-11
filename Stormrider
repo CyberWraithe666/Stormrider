@@ -1,0 +1,75 @@
+var iFileName = "Stormrider.js"
+RequiredSheetVersion(12.999);
+ 
+// Define the source
+SourceList.Malazan={
+    name : "Malazan",
+    abbreviation : "Mal",
+    group : "Homebrews",
+    url : "",
+    date : "2019/03/09"
+};
+ 
+RaceList["Stormrider"] = {
+    regExpSearch : /^(?=.*stormrider).*$/i,
+    name : "Stormrider",
+    sortname : "Stormrider",
+    source : ["Mal", 0],
+    plural : "Stormrider",
+    size : 3,
+    speed : {walk : { spd : 30, enc : 20 }, swim : { spd : 40, enc : 20 } },
+    languageProfs : ["Common", 1],
+    vision : [["Darkvision", 60]],
+    savetxt : { text : ["Magic can't put me to sleep"], adv_vs : ["charmed"] },
+	dmgres : ["Cold"],
+    skillstxt : ["Perception"],
+    age : " typically claim adulthood around age 100 and have no known age limit",
+    height : " stand between 6 and 8 feet tall (6'8\" + 2d6\")",
+    weight : " weigh around 150 lb (115 + 2d4 \xD7 2d6 lb)",
+    heightMetric : " stand between 1,2 and 1,5 metres tall (110 + 5d4 cm)",
+    weightMetric : " weigh around 70 kg (55 + 5d4 \xD7 4d6 / 10 kg)",
+    improvements : "Stormrider: +2 Dexterity, +1 Constitution;",
+    scores : [0, 2, 1, 0, 0, 0],
+    trait : "Stormrider (+2 Dexterity, +1 Constitution)"/n 	"Icekin: Stormriders are kin to ice. Based upon this connection they can cast sevel ice based spells./n Child of the Sea. I have 40 ft swimming speed and can breathe air and water./n  Friend of the Sea: Through sounds and gestures, I can communicate simple ideas with any beast that has an inborn swimming speed, I can also creeate a horse of water while in the sea."
+    features : {
+        "Ice Shard" : {
+            name : "Ice Shard",
+            minlevel : 0,
+            usages : "prof",
+            recovery : "long rest",
+            action : ["action", ""],
+            spellcastingBonus : {
+                name : "Ice Shard",
+                spells : ["ice knife"],
+                selection : ["ice knife"],
+                atwill : true,
+            }
+        },
+		"Ocean mount" : {
+			name : "phantom steed",
+			minlevel : 0,
+			action : ["action", ""],
+			usages : "prof",
+			recovery : "long rest",
+			spellcastingBonus : {
+				name : "Ocean Mount",
+				spells : ["phantom steed"],
+				selection : ["phantom steed"],
+				atwill : true,
+			}
+		},
+		"Ice Storm" : {
+			name : "Ice Storm",
+			minlevel : 10,
+			action : ["action", ""],
+			usages : 1,
+			recovery : "long rest",
+			spellcastingBonus : {
+				name : "Ice Storm",
+				spells : ["ice storm"],
+				selection : ["ice storm"],
+				oncelr : true
+              }
+        }
+    }
+};
